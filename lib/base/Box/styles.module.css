@@ -1,3 +1,4 @@
+/* Default stylings */
 .box {
   -webkit-box-sizing: border-box;
   -moz-box-sizing: border-box;
@@ -5,14 +6,16 @@
   display: flex;
 }
 
-.direction-row {
+/* Direction */
+.row {
   flex-direction: row;
 }
 
-.direction-column {
+.column {
   flex-direction: column;
 }
 
+/* Justify content */
 .justify-start {
   justify-content: flex-start;
 }
@@ -37,6 +40,7 @@
   justify-content: space-evenly;
 }
 
+/* Align items */
 .align-start {
   align-items: flex-start;
 }
@@ -55,4 +59,21 @@
 
 .align-baseline {
   align-items: baseline;
+}
+
+/* Flex wrap */
+.wrap {
+  flex-wrap: wrap;
+}
+
+.nowrap {
+  flex-wrap: nowrap;
+}
+
+.width-default {
+  max-width: 1500px;
+}
+
+.width-full {
+  max-width: initial;
 }

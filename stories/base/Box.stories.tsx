@@ -1,20 +1,9 @@
 import type { Meta, StoryObj } from '@storybook/react';
-import { Box } from '.';
+import { Box } from '@/base/Box';
 
 const meta: Meta<typeof Box> = {
   title: 'Base/Box',
   component: Box,
-  args: {
-    style: {
-      backgroundColor: 'turquoise',
-    },
-  },
-  // argTypes: {
-  //   justify: {
-  //     options: ["start", "center", "end"],
-  //     control: { type: "radio" },
-  //   },
-  // },
   parameters: {
     controls: {
       exclude: ['style', 'children'],
@@ -27,12 +16,16 @@ type Story = StoryObj<typeof meta>;
 
 export const Default: Story = {
   args: {
-    direction: 'row',
+    direction: 'column',
     justify: 'start',
+    align: 'start',
+    wrap: 'wrap',
+    width: 'default',
     children: (
       <>
-        <p>Default Box</p>
-        <p>Default Box</p>
+        <p>Item</p>
+        <p>Item</p>
+        <p>Item</p>
       </>
     ),
   },
