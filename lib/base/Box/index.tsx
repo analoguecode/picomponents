@@ -1,9 +1,12 @@
-import { ComponentPropsWithRef, ForwardedRef, forwardRef } from 'react';
-import { MotionProps, motion } from 'framer-motion';
-import styles from './styles.module.css';
 import classnames from '@/utils/classnames';
+import { motion } from 'framer-motion';
+import { ComponentPropsWithRef, ForwardedRef, forwardRef } from 'react';
+import styles from './styles.module.css';
 
-type BaseProps = ComponentPropsWithRef<'div'> & MotionProps;
+type Tags = 'div';
+type Elements = HTMLDivElement;
+
+type BaseProps = ComponentPropsWithRef<Tags>;
 
 interface BoxProps extends BaseProps {
   direction?: 'row' | 'column';
@@ -20,13 +23,13 @@ function BoxComponent(
     align = 'start',
     wrap = 'wrap',
     width = 'default',
-    className,
+    className = '',
     ...props
   }: BoxProps,
-  ref: ForwardedRef<HTMLDivElement>
+  ref: ForwardedRef<Elements>
 ) {
   return (
-    <motion.div
+    <div
       ref={ref}
       className={classnames(
         styles.box,
@@ -35,11 +38,13 @@ function BoxComponent(
         styles[`align-${align}`],
         styles[wrap],
         styles[`width-${width}`],
-        className ?? ''
+        className
       )}
       {...props}
-    ></motion.div>
+    ></div>
   );
 }
 
-export const Box = forwardRef(BoxComponent);
+export const Box = motion(forwardRef(BoxComponent), {
+  forwardMotionProps: true,
+});

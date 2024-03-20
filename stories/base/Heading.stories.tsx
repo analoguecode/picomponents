@@ -1,5 +1,5 @@
-import type { Meta, StoryObj } from '@storybook/react';
 import { Heading } from '@/base/Heading';
+import type { Meta, StoryObj } from '@storybook/react';
 
 const meta: Meta<typeof Heading> = {
   title: 'Base/Heading',
@@ -17,41 +17,41 @@ type Story = StoryObj<typeof meta>;
 export const H1: Story = {
   args: {
     as: 'h1',
-    children: 'Test',
+    children: 'Heading 1',
   },
 };
 
 export const H2: Story = {
   args: {
     as: 'h2',
-    children: 'Test',
+    children: 'Heading 2',
   },
 };
 
 export const H3: Story = {
   args: {
     as: 'h3',
-    children: 'Test',
+    children: 'Heading 3',
   },
 };
 
 export const H4: Story = {
   args: {
     as: 'h4',
-    children: 'Test',
+    children: 'Heading 4',
   },
 };
 
 export const H5: Story = {
   args: {
     as: 'h5',
-    children: 'Test',
+    children: 'Heading 5',
   },
 };
 
 export const H6: Story = {
   args: {
     as: 'h6',
-    children: 'Test',
+    children: 'Heading 6',
   },
 };

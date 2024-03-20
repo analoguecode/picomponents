@@ -12,7 +12,7 @@
     "**/*.css"
   ],
   "scripts": {
-    "dev": "storybook dev -p 3000",
+    "dev": "storybook dev -p 3000 --no-open",
     "build": "tsc --p ./tsconfig-build.json && vite build",
     "build:storybook": "storybook build",
     "lint": "eslint . --ext ts,tsx --report-unused-disable-directives --max-warnings 0",
@@ -23,7 +23,6 @@
     "@storybook/addon-essentials": "^8.0.1",
     "@storybook/addon-interactions": "^8.0.1",
     "@storybook/addon-links": "^8.0.1",
-    "@storybook/addon-onboarding": "^8.0.1",
     "@storybook/blocks": "^8.0.1",
     "@storybook/react": "^8.0.1",
     "@storybook/react-vite": "^8.0.1",
@@ -50,6 +49,7 @@
     "vite-tsconfig-paths": "^4.3.2"
   },
   "peerDependencies": {
+    "@radix-ui/colors": "^3.0.0",
     "framer-motion": "^11.0.15",
     "react": "^18.2.0",
     "react-aria-components": "^1.1.1",

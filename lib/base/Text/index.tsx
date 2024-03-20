@@ -1,3 +1,5 @@
+import classnames from '@/utils/classnames';
+import { motion } from 'framer-motion';
 import {
   ComponentPropsWithRef,
   ForwardedRef,
@@ -5,20 +7,25 @@ import {
   forwardRef,
 } from 'react';
 import styles from './styles.module.css';
-import classnames from '@/utils/classnames';
-import { MotionProps, motion } from 'framer-motion';
 
-type TextProps = ComponentPropsWithRef<'p'> & MotionProps;
+type Tags = 'p';
+type Elements = HTMLParagraphElement;
+
+type BaseProps = ComponentPropsWithRef<Tags>;
+
+interface TextProps extends BaseProps {}
 
 function TextComponent(
-  { className, ...props }: TextProps,
-  ref: ForwardedRef<HTMLParagraphElement>
+  { className = '', ...props }: TextProps,
+  ref: ForwardedRef<Elements>
 ) {
-  return createElement(motion.p, {
+  return createElement('p', {
     ref,
-    className: classnames(styles.text, className ?? ''),
+    className: classnames(styles.text, className),
     ...props,
   });
 }
 
-export const Text = forwardRef(TextComponent);
+export const Text = motion(forwardRef(TextComponent), {
+  forwardMotionProps: true,
+});

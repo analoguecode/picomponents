@@ -1,5 +1,5 @@
-import type { Meta, StoryObj } from '@storybook/react';
 import { Text } from '@/base/Text';
+import type { Meta, StoryObj } from '@storybook/react';
 
 const meta: Meta<typeof Text> = {
   title: 'Base/Text',
@@ -16,6 +16,6 @@ type Story = StoryObj<typeof meta>;
 
 export const Default: Story = {
   args: {
-    children: 'Test',
+    children: 'Text',
   },
 };
